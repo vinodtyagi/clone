@@ -1,0 +1,47 @@
+                        Centos 7 puppet master-slave configuration 
+
+                                puppet-master
+
+yum -y update
+
+yum -y install http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
+                                              petlabs-release-el-7.noarch.rpm
+
+#after install puppet directory then insatll puppet master server
+
+yum -y install puppet-server
+
+#edit /etc/puppet/puppet.conf file in main section 
+dns_alt_nane = ipadress or <name> after edit file now restert puppet server
+ans enable....
+
+systemctl restart puppetserver
+
+systemctl enable puppetserver
+
+                            
+                                puppet-client
+yum -y update
+
+yum -y install http://yum.puppetlabs.com/puppetlabs-release-el-7.noarch.rpm
+                                              petlabs-release-el-7.noarch.rpm
+
+#after install puppet directory then insatll puppet-client
+
+yum -y install puppet
+
+#afetr install puppet client edit /etc/puppet/puppet.conf file in agent section server = <puppet-masster name or ip adress> which is given
+in master /etc/puppet/puppet.conf file  after edit file now restert puppet server ans enable....
+
+systemctl restart puppet
+
+systemctl enable puppet
+
+
+
+
+
+
+
+
+

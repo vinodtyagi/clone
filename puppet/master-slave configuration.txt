@@ -1,0 +1,17 @@
+# make sure /etc/puppet/puppet.conf file edited in both master and slave
+
+#generate master certificate from master
+
+sudo -u puppet puppet master  --no-deamonize --verbose
+
+#now send request for sign sertificate by agent
+
+puppet agent -t
+
+#now certificate sign by master
+
+puppet cert sign <certname>
+
+#to confirm cert gign by master or not go to puppet agent...
+
+puppet agent -t
